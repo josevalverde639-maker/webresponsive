@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacta Conmigo - Jose Valverde</title>
+    <link rel="stylesheet" href="formulario.css">
+</head>
+<body>
+<section>
+    <header>
+        <a href="index.html" class="logo">JOSE VALVERDE</a>
+        <div class="menu-toggle" onclick="document.getElementById('navbar').classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="navbar" id="navbar">
+            <li><a href="SobreMi.html">Quien soy</a></li>
+            <li><a href="CV.html">CV</a></li>
+            <li><a href="proyectos.html">Proyectos Destacados</a></li>
+            <li><a href="formulariolanding.html">Contacta Conmigo</a></li>
+        </ul>
+    </header>
+
+    <div class="contacto-contenido">
+        <div class="contacto-titulo">
+            <h1><span>Contacta</span> Conmigo</h1>
+            <p>¿Tienes alguna pregunta o propuesta? Escríbeme y te respondo lo antes posible.</p>
+        </div>
+
+        <div class="form-card">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" id="nombre" placeholder="Tu nombre" />
+                </div>
+                <div class="form-group">
+                    <label>Apellidos</label>
+                    <input type="text" id="apellidos" placeholder="Tus apellidos" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="tu@email.com" />
+            </div>
+            <div class="form-group">
+                <label>Asunto</label>
+                <select id="asunto">
+                    <option value="" disabled selected>Selecciona un asunto</option>
+                    <option value="colaboracion">Colaboración</option>
+                    <option value="practicas">Prácticas / FCT</option>
+                    <option value="proyecto">Proyecto conjunto</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Mensaje</label>
+                <textarea id="mensaje" placeholder="Escribe tu mensaje aquí..."></textarea>
+            </div>
+            <button class="btn-enviar" onclick="enviarFormulario()">
+                <ion-icon name="send-outline"></ion-icon>
+                Enviar mensaje
+            </button>
+            <div class="success-msg" id="successMsg">
+                ✅ ¡Mensaje enviado correctamente! Me pondré en contacto contigo pronto.
+            </div>
+        </div>
+
+        <a href="index.html" class="btn-volver">← Volver al inicio</a>
+    </div>
+
+    <div class="footer-bar">
+        <div class="copyright"><p>&copy; Web Personal – Lenguaje de Marcas · CFGS ASIR</p></div>
+        <ul class="redessociales">
+            <li><a href="#"><ion-icon name="mail-unread-outline"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-github"></ion-icon></a></li>
+        </ul>
+    </div>
+</section>
+<script>
+function enviarFormulario() {
+    const nombre = document.getElementById('nombre').value.trim();
+    const email  = document.getElementById('email').value.trim();
+    const mensaje = document.getElementById('mensaje').value.trim();
+    if (!nombre || !email || !mensaje) { alert('Por favor, rellena al menos el nombre, email y mensaje.'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Por favor, introduce un email válido.'); return; }
+    document.getElementById('successMsg').style.display = 'block';
+    ['nombre','apellidos','email','asunto','mensaje'].forEach(id => document.getElementById(id).value = '');
+    setTimeout(() => { document.getElementById('successMsg').style.display = 'none'; }, 5000);
+}
+</script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
