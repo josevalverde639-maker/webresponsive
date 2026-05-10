@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Jose Valverde</title>
+    <link rel="stylesheet" href="cv.css">
+</head>
+<body>
+<section>
+    <header>
+        <a href="index.html" class="logo">JOSE VALVERDE</a>
+        <div class="menu-toggle" onclick="document.getElementById('navbar').classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="navbar" id="navbar">
+            <li><a href="SobreMi.html">Quien soy</a></li>
+            <li><a href="CV.html">CV</a></li>
+            <li><a href="proyectos.html">Proyectos Destacados</a></li>
+            <li><a href="formulariolanding.html">Contacta Conmigo</a></li>
+        </ul>
+    </header>
+
+    <div class="cv-contenido">
+        <div class="cv-titulo"><h1>Mi <span>CV</span></h1></div>
+        <div class="cv-card">
+            <ion-icon name="document-text-outline" class="cv-icon"></ion-icon>
+            <h2>Currículum Vitae</h2>
+            <p>Descarga o visualiza mi currículum vitae completo en formato PDF. Incluye mi formación académica, habilidades técnicas, proyectos realizados y datos de contacto.</p>
+            <a href="img/Curriculum_JoseValverde_2025.pdf" target="_blank" class="btn-pdf">
+                <ion-icon name="cloud-download-outline"></ion-icon>
+                Descargar CV (PDF)
+            </a>
+        </div>
+        <a href="index.html" class="btn-volver">← Volver al inicio</a>
+    </div>
+
+    <div class="footer-bar">
+        <div class="copyright"><p>&copy; Web Personal – Lenguaje de Marcas · CFGS ASIR</p></div>
+        <ul class="redessociales">
+            <li><a href="#"><ion-icon name="mail-unread-outline"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-github"></ion-icon></a></li>
+        </ul>
+    </div>
+</section>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
